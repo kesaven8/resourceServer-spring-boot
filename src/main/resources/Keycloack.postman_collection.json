@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "5edf1405-4ff3-4a9e-8d52-555161514132",
+		"name": "Keycloack",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Generate Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "spring-app",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "kesaven",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/realms/keycloak-authorization-server/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"realms",
+						"keycloak-authorization-server",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test Application",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJha1VuMFF1eDJ1QzZQQTBmRnhKamRJZUFzQWg0YjJRLXYxOVJERFRxT05FIn0.eyJleHAiOjE2NjYzNzA4MjYsImlhdCI6MTY2NjM3MDUyNiwianRpIjoiMzFmNTgxZGQtYTUxMC00ZjlkLTlkYTQtMzdkN2Y2M2M5MTgyIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9rZXljbG9hay1hdXRob3JpemF0aW9uLXNlcnZlciIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI4MTIzN2UwOC1iMjc0LTQwODUtOGM5My02NGYwZjE2ZmE0OTEiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJzcHJpbmctYXBwIiwic2Vzc2lvbl9zdGF0ZSI6IjY0NjBlNzI3LTc5ZGQtNDA4Ni05N2ZkLTYxNWE4ODEwMTRhOCIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJBRE1JTiIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1rZXljbG9hay1hdXRob3JpemF0aW9uLXNlcnZlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjY0NjBlNzI3LTc5ZGQtNDA4Ni05N2ZkLTYxNWE4ODEwMTRhOCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoia2VzYXZlbiIsImdpdmVuX25hbWUiOiIiLCJmYW1pbHlfbmFtZSI6IiIsImVtYWlsIjoia2VzYXZlbkBnbWFpbC5jb20ifQ.FqKNpaRj8wcF0CuZdlJUuatIyNCUOLKxpHZBLVvvZPxn3TenoA9Tn1UxXLgHu52lb31qzC4ZyArT1gPkNYccdJLGzsVTUfUHD7xfuMswRMPtdWzxbMKtbrRtiFjPQdLgLt1ivIwWVmQn9mRPxAAMw8CFqCfecWZfV02n6qhOvzkShxI-4sOM9t_hZ3KE-X0RU4uVMEEDmYx1xU3INcASY9tkHOPS3BTmQwQ0S3AtBzeuE8PrEJMuLxZdw2L1zNOfLUCnMyyr25u-xt6BmDGxpPD1c-i5spI2zD2DiIUF9zq2IWlzKXdtjSNse1K8JJWkeN7LOXXl-u97uCnnnps2tg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/simple-user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"simple-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test Configuration",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/realms/keycloak-authorization-server/protocol/openid-connect/certs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"realms",
+						"keycloak-authorization-server",
+						"protocol",
+						"openid-connect",
+						"certs"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
